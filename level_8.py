@@ -16,4 +16,8 @@ encodedSecretToAscii = bytes.fromhex(encodedSecret).decode('utf-8')
 
 encodedSecretReversed = encodedSecretToAscii[::-1]
 
-print(base64.b64decode(encodedSecretReversed).decode('utf-8'))
+secretDecoded = base64.b64decode(encodedSecretReversed).decode('utf-8')
+
+req = requests.post(url, auth=(username, password), data = {'secret': secretDecoded, 'submit': 'submit'})
+
+print(re.findall('natas9 is (.*)', req.text)[0])
