@@ -9,4 +9,3 @@ password='sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14'
 wordlist_path='/usr/share/wordlists/dirb-master/common.txt'
 
 gobuster dir -P $password -U $username -u $url -w $wordlist_path
-
